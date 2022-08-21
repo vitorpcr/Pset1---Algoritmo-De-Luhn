@@ -1,0 +1,40 @@
+#Arquvio em python!
+
+NumeroCartao = list(input('Digite o numero do seu cartão: ').strip())
+#Strip = remover espaços.
+checarDigito = NumeroCartao.pop()
+
+#pop = remover o item de uma lista.
+
+NumeroCartao.reverse()
+
+ArrayDigitos = []
+
+#reverse = inverter a ordem
+
+if len(NumeroCartao) < 13 or len(NumeroCartao) > 16:
+  print('O numero digitado está incorreto!')
+else:
+  for indice, digito in enumerate(NumeroCartao):
+    if indice % 2 == 0:
+      dobrarDigito = int(digito) * 2
+
+      if dobrarDigito > 9:
+        dobrarDigito = dobrarDigito - 9
+
+      
+      ArrayDigitos.append(dobrarDigito)
+      #append = Adicionar um item no final da lista                    
+    else:
+      ArrayDigitos.append(int(Digito))
+
+  
+
+
+
+    
+total = int(checarDigito) + sum(ArrayDigitos)
+if total % 10 == 0:
+  print('válido')
+else:
+  print('inválido')
